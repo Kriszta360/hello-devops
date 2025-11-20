@@ -1,0 +1,19 @@
+{
+  "name": "hello-devops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "node app.js",
+  "dev": "node app.js",
+  "build": "echo \"Build step: nincs külön fordítás, az alkalmazás futásra kész.\"",
+  "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
