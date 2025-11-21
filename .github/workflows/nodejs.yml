@@ -43,4 +43,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/hello-devops:latest
+        tags: ghcr.io/kriszta360/hello-devops:latest
