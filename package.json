@@ -1,14 +1,14 @@
 {
   "name": "hello-devops",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Egyszerű Node.js + Express alkalmazás DevOps beadandóhoz",
+  "main": "alkalmazás.js",
   "scripts": {
-  "start": "node app.js",
-  "dev": "node app.js",
-  "build": "echo \"Build step: nincs külön fordítás, az alkalmazás futásra kész.\"",
-  "test": "echo \"No tests specified\" && exit 0"
-},
+    "start": "node alkalmazás.js",
+    "dev": "node alkalmazás.js",
+    "build": "echo \"Build step: nincs külön fordítás, az alkalmazás futásra kész.\"",
+    "test": "echo \"Nincsenek meghatározott tesztek\" && exit 0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,3 +17,4 @@
     "express": "^5.1.0"
   }
 }
+
