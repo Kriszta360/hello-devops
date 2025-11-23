@@ -3,44 +3,24 @@ name: Node.js CI
 on:
   push:
     branches: [ "fő-" ]
-  pull_request:
-    branches: [ "fő-" ]
   workflow_dispatch:
 
 jobs:
-  build-and-push:
+  build-and-test:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: write   # GHCR-hez kell, hogy tudjon pusholni
-      id-token: write
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Kód letöltése
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: "18"
+      - name: Node.js beállítása
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Függőségek telepítése
+        run: npm ci
 
-    - name: Run tests
-      run: npm test || echo "no tests"
-
-    - name: Log in to GitHub Container Registry
-      uses: docker/login-action@v3
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v6
-      with:
-        context: .
-        push: true
-        tags: ghcr.io/kriszta360/hello-devops:latest
+      - name: Tesztek futtatása
+        run: npm test
