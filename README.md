@@ -154,7 +154,7 @@ A projekt trunk-based alapon készült:
 
 ---
 
-# Követelmények teljesítése (tanár számára rövid összefoglaló)
+# Követelmények teljesítése (A tanár úr számára rövid összefoglaló.)
 
 | Feladat | Teljesítve |
 |--------|:----------:|
